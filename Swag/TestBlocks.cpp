@@ -2,6 +2,9 @@
 #include "TestBlocks.h"
 #include "allegro5/allegro_primitives.h"
 #include "Blocks.h"
+
+
+#define blockGrav 10;
 TestBlocks::TestBlocks()
 {
 

@@ -28,3 +28,6 @@ static bool checkOvLp(double left1, double right1, double top1, double bot1,
 		return true;
 	}
 }
+
+
+
