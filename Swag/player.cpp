@@ -26,5 +26,5 @@ void Player::update()
 
 void Player::draw()
 {
-		al_draw_filled_rectangle(x, y, x + 64, y + 64, color);
+		al_draw_filled_rectangle(x, y, x + width, y + height, color);
 }

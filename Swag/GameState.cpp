@@ -51,7 +51,7 @@ GameState::GameState()
 	p2.y = 200;
 	p2.gravity = PLR_GRAV;
 
-	p1.width = p2.width = 64;
+	p1.width = p2.width = 48;
 	p1.height = p2.height = 64;
 
 	// load assets
