@@ -1,10 +1,10 @@
 #pragma once
 #include "State.h"
-class player :
-	public State
+class player
 {
 public:
 	player();
+	~player();
 
 	virtual void update();
 	virtual void draw();
