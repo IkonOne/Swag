@@ -52,7 +52,7 @@ GameState::GameState()
 	p2.gravity = PLR_GRAV;
 
 	p1.width = p2.width = 48;
-	p1.height = p2.height = 64;
+	p1.height = p2.height = 48;
 
 	// load assets
 	font = al_load_ttf_font("Pixellari.ttf", 64, 0);
