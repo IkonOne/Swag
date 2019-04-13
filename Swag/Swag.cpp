@@ -47,13 +47,13 @@ int init() {
 		return -1;
 
 	al_register_event_source(eventQueue, al_get_display_event_source(display));
-	al_register_event_source(eventQueue, al_get_timer_event_source(timer));
+	//al_register_event_source(eventQueue, al_get_timer_event_source(timer));
 
 	al_clear_to_color(al_map_rgb(0, 0, 255));
 	al_flip_display();
 
-	// state = std::make_shared<TestBlocks>();
-	state = std::make_shared<TestBullet>();
+	 state = std::make_shared<TestBlocks>();
+	//state = std::make_shared<TestBullet>();
 	// state = std::make_shared<TestTilemap>();
 	// state = std::make_shared<TestPlayer>();
 
