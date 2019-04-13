@@ -1,7 +1,13 @@
 #include "pch.h"
 #include "TileMap.h"
 #include "allegro5/allegro_primitives.h"
-#include <iostream>
+
+bool activeTile[20][11];
+
+int x = 0;
+int y = 0;
+int columns = 20;
+int rows = 11;
 
 TileMap::TileMap()
 {
@@ -14,29 +20,29 @@ TileMap::~TileMap()
 
 void TileMap::draw()
 {
-	int x = 0;
-	int y = 0;
-	int columns = 20;
-	int rows =11;
-
-	for (int i = 0; i < rows; i++)
+	for (int i = 0; i < 20; i++)
 	{
-		x = 0;
-		for (int i = 0; i < columns; i++)
+		activeTile[i][10] = true;
+	}
+
+	for (int i = 0; i < columns; i++)
+	{
+		for (int j = 0; j < rows; j++)
 		{
-			al_draw_filled_rectangle(x, y, x + 64, y + 64, al_map_rgb(255, 0, 0));
-			x = x + 64;
+			if (activeTile[i][j])
+			{
+				al_draw_rectangle(64 * i, 64 * j, (64 * i) + 64, (64 * j) + 64, al_map_rgb(255, 0, 0), 2);
+			}
 		}
-		y = y + 64;
 	}
 }
 
-void TileMap::getTile()
+bool TileMap::getTile(int x, int y)
 {
-
+	return activeTile[x][y];
 }
 
-void TileMap::setTile()
+void TileMap::setTile(int x, int y)
 {
-
+	activeTile[x][y] = true;
 }

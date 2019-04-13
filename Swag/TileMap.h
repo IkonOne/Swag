@@ -4,8 +4,8 @@ class TileMap
 public:
 	TileMap();
 	~TileMap();
-	void getTile();
-	void setTile();
+	bool getTile(int x, int y);
+	void setTile(int x, int y);
 	void draw();
 };
 
