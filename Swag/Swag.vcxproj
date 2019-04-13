@@ -161,6 +161,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Blocks.h" />
     <ClInclude Include="BulletMgr.h" />
     <ClInclude Include="common.h" />
     <ClInclude Include="GameState.h" />
@@ -174,6 +175,7 @@
     <ClInclude Include="TileMap.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Blocks.cpp" />
     <ClCompile Include="BulletMgr.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="pch.cpp">
