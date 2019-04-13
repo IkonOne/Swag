@@ -134,7 +134,33 @@ void GameState::update()
 		p2Grounded = true;
 	}
 
+
 	// clamp players to the screen
+	//p1
+	if (p1.x  < 1 || p1.x + p1.width > 1280)
+	{
+		if (p1.x < 1)
+		{
+			p1.x = 1;
+		}
+		if (p1.x + p1.width > 1280)
+		{
+			p1.x = 1280 - p1.width;
+		}
+
+	}
+	//p2
+	if (p2.x < 1 || p2.x + p2.width > 1280)
+	{
+		if (p2.x < 1)
+		{
+			p2.x = 1;
+		}
+		if (p2.x + p2.width > 1280)
+		{
+			p2.x = 1280 - p1.width;
+		}
+	}
 
 }
 
