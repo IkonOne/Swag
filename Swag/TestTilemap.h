@@ -6,5 +6,9 @@ class TestTilemap :
 public:
 	TestTilemap();
 	~TestTilemap();
+	void setTile();
+	void getTile();
+	void draw();
 };
+
 
