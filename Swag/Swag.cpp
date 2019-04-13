@@ -34,7 +34,7 @@ int init() {
 	}
 
 
-	display = al_create_display(1280, 720);
+	display = al_create_display(GAME_WIDTH, GAME_HEIGHT);
 	if (display == nullptr)
 		return -1;
 
