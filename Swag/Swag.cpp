@@ -7,6 +7,8 @@
 #include "allegro5/allegro_font.h"
 #include "allegro5/allegro_ttf.h"
 
+#include "TestPlayer.h"
+
 // this is what we use to draw!!!
 #include "allegro5/allegro_primitives.h"
 
