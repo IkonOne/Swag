@@ -36,13 +36,19 @@ int init() {
 	timer = al_create_timer(DT);
 	if (timer == nullptr)
 		return -1;
+	al_start_timer(timer);
 
 	eventQueue = al_create_event_queue();
 	if (eventQueue == nullptr)
 		return -1;
 
+	al_register_event_source(eventQueue, al_get_display_event_source(display));
+	al_register_event_source(eventQueue, al_get_timer_event_source(timer));
+
 	al_clear_to_color(al_map_rgb(0, 0, 255));
 	al_flip_display();
+
+	state = std::make_shared<State>();
 
 	return 1;
 }
@@ -68,6 +74,26 @@ int main()
 		return -1;
 
 	while (true) {
+		bool updateAndDraw = false;
+		ALLEGRO_EVENT ev;
+		ALLEGRO_TIMEOUT timeout;
+		al_init_timeout(&timeout, DT);
 
+		int getEvent = al_wait_for_event_until(eventQueue, &ev, &timeout);
+		if (getEvent) {
+			switch (ev.type) {
+			case ALLEGRO_EVENT_TIMER:
+				updateAndDraw = true;
+				break;
+				
+			default:
+				break;
+			}
+		}
+
+		if (updateAndDraw) {
+			update();
+			draw();
+		}
 	}
 }
