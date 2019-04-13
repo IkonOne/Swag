@@ -14,6 +14,6 @@ public:
 	float y=0;
 	float width;
 	float height;
-	float velX;
-	float velY;
+	float velX=.01;
+	float velY=.01;
 };

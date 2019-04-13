@@ -3,6 +3,7 @@
 #include "allegro5/allegro_primitives.h"
 #include "player.h"
 
+player player1;
 
 TestPlayer::TestPlayer()
 {
@@ -14,10 +15,10 @@ TestPlayer::~TestPlayer()
 
 void TestPlayer::update()
 {
+	player1.update();
 }
 
 void TestPlayer::draw()
 {
-	player player1;
 	player1.draw();
 }

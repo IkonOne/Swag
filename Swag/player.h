@@ -9,10 +9,11 @@ public:
 	virtual void update();
 	virtual void draw();
 
-	float x = 0;
-	float y = 0;
+	float x;
+	float y;
 	float width;
 	float height;
-	float velX;
-	float velY;
+	float velX=.1;
+	float velY=0;
+	float gravity = .01;
 };
