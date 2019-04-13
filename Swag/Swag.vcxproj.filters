@@ -36,7 +36,7 @@
     <ClInclude Include="TestBlocks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Blocks.h">
+    <ClInclude Include="BulletMgr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <ClCompile Include="TestBlocks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Blocks.cpp">
+    <ClCompile Include="BulletMgr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
