@@ -4,6 +4,8 @@
 #include "allegro5/allegro.h"
 #include "allegro5/allegro_font.h"
 #include "allegro5/allegro_ttf.h"
+#include "allegro5/allegro_audio.h"
+#include "allegro5/allegro_acodec.h"
 #include "common.h"
 #include "GameState.h"
 #include "TileMap.h"
@@ -16,6 +18,7 @@
 #define PLR_HEAD	5
 
 ALLEGRO_FONT * font;
+ALLEGRO_SAMPLE *sampleDab;
 
 struct keyboard_s {
 	bool up;
@@ -53,6 +56,8 @@ GameState::GameState()
 
 	// load assets
 	font = al_load_ttf_font("Pixellari.ttf", 64, 0);
+
+	sampleDab = al_load_sample("dab.wav");
 }
 
 
@@ -111,13 +116,17 @@ void GameState::update()
 		// p1 head stomp swag
 		if (p1.y + p1.height - PLR_HEAD < p2.y) {
 			gameOver = true;
-			gameOverMsg = "p1 dabbed on p2";
+			gameOverMsg = "p1 dabbed on p2  <o/";
+
+			al_play_sample(sampleDab, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
 		}
 
 		// p2 head stomp dab	<o/
 		if (p2.y + p2.height - PLR_HEAD < p1.y) {
 			gameOver = true;
-			gameOverMsg = "p2 dabbed on p1";
+			gameOverMsg = "p2 dabbed on p1  <o/";
+
+			al_play_sample(sampleDab, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_ONCE, NULL);
 		}
 	}
 
@@ -145,7 +154,7 @@ void GameState::draw()
 	tileMap.draw();
 
 	if(gameOver)
-		al_draw_text(font, al_map_rgb(0, 255, 0), 0, 0, 0, gameOverMsg.c_str());
+		al_draw_text(font, al_map_rgb(0, 255, 0), 100, 100, 0, gameOverMsg.c_str());
 }
 
 void GameState::handleEvents(ALLEGRO_EVENT * event)

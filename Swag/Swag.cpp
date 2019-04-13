@@ -6,6 +6,8 @@
 #include "allegro5/allegro.h"
 #include "allegro5/allegro_font.h"
 #include "allegro5/allegro_ttf.h"
+#include "allegro5/allegro_audio.h"
+#include "allegro5/allegro_acodec.h"
 
 // this is what we use to draw!!!
 #include "allegro5/allegro_primitives.h"
@@ -29,7 +31,10 @@ int init() {
 		!al_init_font_addon() ||
 		!al_init_ttf_addon() ||
 		!al_init_primitives_addon() ||
-		!al_install_keyboard()
+		!al_install_keyboard() ||
+		!al_install_audio() ||
+		!al_init_acodec_addon() ||
+		!al_reserve_samples(1)
 		)
 	{
 		return -1;
