@@ -109,13 +109,13 @@ void GameState::update()
 		p2.y -= p2.velY * PLR_BOUNCE;
 
 		// p1 head stomp swag
-		if (p1.y - p2.y <= PLR_HEAD) {
+		if (p1.y + p1.height - PLR_HEAD < p2.y) {
 			gameOver = true;
 			gameOverMsg = "p1 dabbed on p2";
 		}
 
 		// p2 head stomp dab	<o/
-		if (p2.y - p1.y <= PLR_HEAD) {
+		if (p2.y + p2.height - PLR_HEAD < p1.y) {
 			gameOver = true;
 			gameOverMsg = "p2 dabbed on p1";
 		}
