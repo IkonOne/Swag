@@ -7,6 +7,8 @@
 #include "allegro5/allegro_font.h"
 #include "allegro5/allegro_ttf.h"
 
+#include "TestPlayer.h"
+
 // this is what we use to draw!!!
 #include "allegro5/allegro_primitives.h"
 
@@ -48,7 +50,7 @@ int init() {
 	al_clear_to_color(al_map_rgb(0, 0, 255));
 	al_flip_display();
 
-	state = std::make_shared<State>();
+	state = std::make_shared<TestPlayer>();
 
 	return 1;
 }
