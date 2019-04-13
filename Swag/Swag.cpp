@@ -7,13 +7,15 @@
 #include "allegro5/allegro_font.h"
 #include "allegro5/allegro_ttf.h"
 
-#include "TestPlayer.h"
-
 // this is what we use to draw!!!
 #include "allegro5/allegro_primitives.h"
 
 #include "common.h"
 #include "State.h"
+#include "TestBlocks.h"
+#include "TestBullet.h"
+#include "TestPlayer.h"
+#include "TestTilemap.h"
 
 ALLEGRO_DISPLAY *display;
 ALLEGRO_EVENT_QUEUE *eventQueue;
@@ -50,7 +52,10 @@ int init() {
 	al_clear_to_color(al_map_rgb(0, 0, 255));
 	al_flip_display();
 
-	state = std::make_shared<TestPlayer>();
+	// state = std::make_shared<TestBlocks>();
+	state = std::make_shared<TestBullet>();
+	// state = std::make_shared<TestTilemap>();
+	// state = std::make_shared<TestPlayer>();
 
 	return 1;
 }
@@ -75,12 +80,12 @@ int main()
 	if (!init())
 		return -1;
 
+	ALLEGRO_EVENT ev;
+	ALLEGRO_TIMEOUT timeout;
+	al_init_timeout(&timeout, DT);
+
 	while (true) {
 		bool updateAndDraw = false;
-		ALLEGRO_EVENT ev;
-		ALLEGRO_TIMEOUT timeout;
-		al_init_timeout(&timeout, DT);
-
 		int getEvent = al_wait_for_event_until(eventQueue, &ev, &timeout);
 		if (getEvent) {
 			switch (ev.type) {
