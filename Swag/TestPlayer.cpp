@@ -3,7 +3,7 @@
 #include "allegro5/allegro_primitives.h"
 #include "player.h"
 
-player player1;
+Player player1;
 
 TestPlayer::TestPlayer()
 {

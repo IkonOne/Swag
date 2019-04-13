@@ -1,19 +1,18 @@
 #pragma once
-#include "State.h"
-class player
+class Player
 {
 public:
-	player();
-	~player();
+	Player();
+	~Player();
 
-	virtual void update();
-	virtual void draw();
+	void update();
+	void draw();
 
 	float x;
 	float y;
 	float width;
 	float height;
-	float velX=.1;
-	float velY=0;
-	float gravity = .01;
+	float velX;
+	float velY;
+	float gravity;
 };

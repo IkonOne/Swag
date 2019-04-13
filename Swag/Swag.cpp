@@ -16,6 +16,7 @@
 #include "TestBullet.h"
 #include "TestPlayer.h"
 #include "TestTilemap.h"
+#include "GameState.h"
 
 ALLEGRO_DISPLAY *display;
 ALLEGRO_EVENT_QUEUE *eventQueue;
@@ -60,6 +61,7 @@ int init() {
 	// state = std::make_shared<TestBullet>();
 	// state = std::make_shared<TestTilemap>();
 	// state = std::make_shared<TestPlayer>();
+	state = std::make_shared<GameState>();
 
 	return 1;
 }
