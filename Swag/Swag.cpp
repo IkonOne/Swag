@@ -33,6 +33,7 @@ int init() {
 		return -1;
 	}
 
+
 	display = al_create_display(1280, 720);
 	if (display == nullptr)
 		return -1;
@@ -40,7 +41,6 @@ int init() {
 	timer = al_create_timer(DT);
 	if (timer == nullptr)
 		return -1;
-	al_start_timer(timer);
 
 	eventQueue = al_create_event_queue();
 	if (eventQueue == nullptr)
@@ -48,6 +48,8 @@ int init() {
 
 	al_register_event_source(eventQueue, al_get_display_event_source(display));
 	//al_register_event_source(eventQueue, al_get_timer_event_source(timer));
+
+	al_start_timer(timer);
 
 	al_clear_to_color(al_map_rgb(0, 0, 255));
 	al_flip_display();
@@ -98,9 +100,9 @@ int main()
 			}
 		}
 
-		if (updateAndDraw) {
+		//if (updateAndDraw) {
 			update();
 			draw();
-		}
+		//}
 	}
 }
