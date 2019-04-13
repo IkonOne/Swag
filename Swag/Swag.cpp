@@ -53,8 +53,8 @@ int init() {
 	al_flip_display();
 
 	// state = std::make_shared<TestBlocks>();
-	state = std::make_shared<TestBullet>();
-	// state = std::make_shared<TestTilemap>();
+	//state = std::make_shared<TestBullet>();
+	state = std::make_shared<TestTilemap>();
 	// state = std::make_shared<TestPlayer>();
 
 	return 1;
