@@ -99,10 +99,10 @@ int main()
 				break;
 			}
 		}
-
+		
 		if (updateAndDraw) {
-			update();
-			draw();
+			//update();
+			//draw();
 		}
 	}
 }

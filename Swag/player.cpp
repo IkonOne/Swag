@@ -3,20 +3,16 @@
 #include "allegro5/allegro_primitives.h"
 
 
-TestPlayer::TestPlayer()
+player::player()
 {
-	
+
 }
 
-TestPlayer::~TestPlayer()
-{
-}
-
-void TestPlayer::update()
+void player::update()
 {
 }
 
-void TestPlayer::draw()
+void player::draw()
 {
 	//x+=.05;
 	//y+=.05;
