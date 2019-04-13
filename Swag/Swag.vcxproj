@@ -23,13 +23,13 @@
     <ProjectGuid>{AE8D3E6F-563D-48DD-A0CF-9B7E54E0E6DE}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>Swag</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -164,6 +164,7 @@
     <ClInclude Include="Blocks.h" />
     <ClInclude Include="BulletMgr.h" />
     <ClInclude Include="common.h" />
+    <ClInclude Include="GameState.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="TestBlocks.h" />
@@ -175,6 +176,7 @@
   <ItemGroup>
     <ClCompile Include="Blocks.cpp" />
     <ClCompile Include="BulletMgr.cpp" />
+    <ClCompile Include="GameState.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

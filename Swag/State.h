@@ -1,4 +1,7 @@
 #pragma once
+
+#include "allegro5/allegro.h"
+
 class State
 {
 public:
@@ -7,5 +10,6 @@ public:
 
 	virtual void update();
 	virtual void draw();
+	virtual void handleEvents(ALLEGRO_EVENT *event);
 };
 
