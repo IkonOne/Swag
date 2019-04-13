@@ -42,6 +42,7 @@ GameState::GameState()
 	p1.x = 10;
 	p1.y = 200;
 	p1.gravity = PLR_GRAV;
+	p1.color.g = 1.0;
 
 	p2.x = 600;
 	p2.y = 200;
@@ -132,6 +133,9 @@ void GameState::update()
 		p2.y = 640 - p2.height;
 		p2Grounded = true;
 	}
+
+	// clamp players to the screen
+
 }
 
 void GameState::draw()

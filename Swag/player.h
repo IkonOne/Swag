@@ -1,4 +1,7 @@
 #pragma once
+
+#include "allegro5/allegro_primitives.h"
+
 class Player
 {
 public:
@@ -7,6 +10,8 @@ public:
 
 	void update();
 	void draw();
+
+	ALLEGRO_COLOR color;
 
 	float x;
 	float y;
