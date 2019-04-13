@@ -27,7 +27,8 @@ int init() {
 	if (!al_init() ||
 		!al_init_font_addon() ||
 		!al_init_ttf_addon() ||
-		!al_init_primitives_addon()
+		!al_init_primitives_addon() ||
+		!al_install_keyboard()
 		)
 	{
 		return -1;
@@ -48,6 +49,7 @@ int init() {
 
 	al_register_event_source(eventQueue, al_get_display_event_source(display));
 	al_register_event_source(eventQueue, al_get_timer_event_source(timer));
+	al_register_event_source(eventQueue, al_get_keyboard_event_source());
 
 	al_start_timer(timer);
 
@@ -95,6 +97,11 @@ int main()
 				updateAndDraw = true;
 				break;
 				
+			case ALLEGRO_EVENT_KEY_DOWN:
+			case ALLEGRO_EVENT_KEY_UP:
+				state->handleEvents(&ev);
+				break;
+
 			default:
 				break;
 			}
